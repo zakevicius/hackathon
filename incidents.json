@@ -1,0 +1,14 @@
+[
+  {
+    "provider": "Money money money",
+    "description": "All services are down",
+    "from": "2023-07-01 10:30:00",
+    "to": "2023-07-01 11:30:00"
+  },
+  {
+    "provider": "No money",
+    "description": "All services are down",
+    "from": "2023-07-12 12:30:00",
+    "to": null
+  }
+]

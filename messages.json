@@ -1,0 +1,10 @@
+[
+  {
+    "role": "assistant",
+    "content": "Hello, how can I help you?"
+  },
+  {
+    "role": "user",
+    "content": "It seems I made a mistake entering my bank details and my payout fails"
+  }
+]

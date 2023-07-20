@@ -1,0 +1,29 @@
+{
+  "TICKET-12": {
+    "ticket_data": {
+      "description": "My payout fails",
+      "status": "ongoing",
+      "date": "2023-07-20T13:00:00"
+    },
+    "payment_data": {
+      "amount": 100,
+      "currency": "USD",
+      "status": "failed",
+      "failure_reason": null,
+      "date": "2023-07-20T12:30:00",
+      "provider": "Money money money"
+    },
+    "customer_data": {
+      "name": "John Doe",
+      "iban": "DE89370400440532013000",
+      "bic": "COBADEFFXXX",
+      "address": {
+        "street": "Herrnstraße",
+        "house_number": "1",
+        "zip": "80539",
+        "city": "München",
+        "country": "DE"
+      }
+    }
+  }
+}
