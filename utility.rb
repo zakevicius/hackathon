@@ -30,4 +30,10 @@ module Utility
     content = File.read('./current_incident_data.json')
     current_incident_data = JSON.parse(content)
   end
+
+  def save_information(new_info)
+    File.open("./messages.json", "w") do |f|
+      f.write(JSON.pretty_generate(new_info[:messages].select { |m| m[:role] != "system" }))
+    end
+  end
 end

@@ -43,8 +43,27 @@ while true
       model: "gpt-3.5-turbo", # Required.
       messages: @information[:messages], # Required.
       temperature: 1.5,
-    })
+    }
+  )
 
-  puts response.dig("choices", 0, "message", "content")
-  break
+  ai_message = response.dig("choices", 0, "message", "content")
+
+  @information[:messages] << {
+    role: "assistant",
+    content: ai_message,
+  }
+
+  puts ai_message
+
+  new_prompt = gets.chomp
+
+  if new_prompt == "exit"
+    Utility.save_information(@information)
+    break
+  end
+
+  @information[:messages] << {
+    role: "user",
+    content: new_prompt,
+  }
 end
