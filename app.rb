@@ -28,8 +28,7 @@ def system_instructions
   instr << "```#{@information[:current_incident_data]}```"
   instr << "`#{@information[:data]}`"
   instr << "``#{@information[:incidents]}``"
-  instr << "The answer should be tehcnical and no longer than 150 words. Give details about current case. \n"
-  instr << "In addition to answer before add if user mentioned why it may be happening nad possible reason"
+  instr << "The answer should be tehcnical and no longer than 100 words. Give details about current case. \n"
 end
 
 @information[:messages] << {
@@ -53,8 +52,11 @@ while true
     content: ai_message,
   }
 
-  puts ai_message
+  p '_.' * 30
+  puts "AI: #{ai_message}"
+  p '_.' * 30
 
+  puts "Enter new prompt or 'exit' to exit:"
   new_prompt = gets.chomp
 
   if new_prompt == "exit"
