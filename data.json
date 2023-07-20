@@ -24,7 +24,8 @@
         "city": "München",
         "country": "DE"
       }
-    }
+    },
+    "resolution": "User entered wrong IBAN"
   },
   "TICKET-2": {
     "ticket_data": {

@@ -14,7 +14,7 @@ def system_instructions
   instr << "You are helping technical support specialists at company 'Company JSC'\n" \
           " to find the reason why payout is failing. The information about current payout is given betweeen triple backtikcs ```\n" \
           "You are given a previous known 'Company JSC' issues related to failing payouts. The information is in JSON format. Each element of an array is a separate issue, which first key is a ticket number to which this incident is related. The value holds the following information:\n" \
-          "1. Ticket data. Description of this particular ticket, When it was created and it's status.\n" \
+          "1. Ticket data. Description of this particular ticket, when it was created and it's status. Also a resollution if issue was resolved. \n" \
           "2. Payment data. Amount, currency, status, payment service provider, date when it was initiated and possible reason from provider.\n" \
           "3. Customer data. Name, address and bank information. \n" \
           "All this history is provided between single backticks `  \n" \
@@ -42,7 +42,7 @@ while true
     parameters: {
       model: "gpt-3.5-turbo", # Required.
       messages: @information[:messages], # Required.
-      temperature: 0.3,
+      temperature: 1.5,
     })
 
   puts response.dig("choices", 0, "message", "content")
