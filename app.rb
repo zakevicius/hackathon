@@ -12,7 +12,7 @@ client = OpenAI::Client.new
 def system_instructions
   instr = ""
   instr << "You are helping technical support specialists at company 'Company JSC'\n" \
-          " to find the reason why payout is failing. The information about current payout is given betweeen triple backtikcs ````\n" \
+          " to find the reason why payout is failing. The information about current payout is given betweeen triple backtikcs ```\n" \
           "You are given a previous known 'Company JSC' issues related to failing payouts. The information is in JSON format. Each element of an array is a separate issue, which first key is a ticket number to which this incident is related. The value holds the following information:\n" \
           "1. Ticket data. Description of this particular ticket, When it was created and it's status.\n" \
           "2. Payment data. Amount, currency, status, payment service provider, date when it was initiated and possible reason from provider.\n" \
@@ -25,7 +25,7 @@ def system_instructions
           "Given the chat history, issues history and incidents history your task is to give a reason why payout may be failing. \n" \
           "If similar incidents are already happening provide with a list of ticket ids. \n" \
           "If you do not have enough information to figure out a reason just answer that this case is not known to you and offer to contact provider. \n"
-  instr << "``#{@information[:current_incident_data]}``"
+  instr << "```#{@information[:current_incident_data]}```"
   instr << "`#{@information[:data]}`"
   instr << "``#{@information[:incidents]}``"
   instr << "The answer should be tehcnical and no longer than 150 words. Give details about current case. \n"
